@@ -143,7 +143,7 @@ module.exports = function (router) {
                 { assignedUser: '', assignedUserName: 'unassigned' }, { session: session });
             await User.deleteOne({ _id: userId }, { session: session });
         });
-        res.status(200).json({ message: 'User deleted', data: user });
+        res.status(204).end();
     });
 
     return router;
